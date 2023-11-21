@@ -29,9 +29,9 @@ fun initMongoDB(ctx: InitApiContext) {
 
 class MongoDB(private val context: InitApiContext) : MongoRepository {
     // For testing with a localhost.
-//    private val client = MongoClient.create()
+private val client = MongoClient.create()
     // For a remote mongo database.
-    private val client = MongoClient.create(System.getenv("MONGODB_URI"))
+    //private val client = MongoClient.create(System.getenv("MONGODB_URI"))
 
     private val database = client.getDatabase(DATABASE_NAME)
     private val userCollection = database.getCollection<User>("user")
