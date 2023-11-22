@@ -8,6 +8,7 @@ import kotlinx.serialization.json.jsonObject
 
 @Serializable(ApiListResponseSerializer::class)
  sealed class ApiListResponse {
+
     @Serializable
     @SerialName("idle")
      object Idle : ApiListResponse()
