@@ -34,6 +34,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y nodejs \
     && npm init -y \
+    && npm install @playwright/test \
     && PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT=120000 npx playwright install --with-deps Firefox
 
 # Fetch the latest version of the Kobweb CLI
