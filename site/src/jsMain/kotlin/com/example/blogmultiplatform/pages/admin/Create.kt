@@ -140,7 +140,8 @@ data class CreatePageUiState(
 @Page
 @Composable
 fun CreatePage() {
-    isUserLoggedIn {
+    return
+/*    isUserLoggedIn {
         CreateScreen()
     }
 }
@@ -742,5 +743,5 @@ fun CreateButton(
             .toAttrs()
     ) {
         SpanText(text = text)
-    }
+    }*/
 }
