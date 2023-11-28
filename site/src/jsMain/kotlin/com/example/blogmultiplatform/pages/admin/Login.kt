@@ -70,7 +70,7 @@ fun LoginScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(
+        /*Column(
             modifier = Modifier
                 .padding(leftRight = 50.px, top = 80.px, bottom = 24.px)
                 .backgroundColor(Theme.LightGray.rgb),
@@ -177,7 +177,7 @@ fun LoginScreen() {
                     .fontFamily(FONT_FAMILY),
                 text = errorText
             )
-        }
+        }*/
     }
 }
 
