@@ -62,7 +62,7 @@ import org.w3c.dom.set
 @Page
 @Composable
 fun LoginScreen() {
-    val scope = rememberCoroutineScope()
+   /* val scope = rememberCoroutineScope()
     val context = rememberPageContext()
     var errorText by remember { mutableStateOf(" ") }
 
@@ -70,7 +70,7 @@ fun LoginScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        /*Column(
+        *//*Column(
             modifier = Modifier
                 .padding(leftRight = 50.px, top = 80.px, bottom = 24.px)
                 .backgroundColor(Theme.LightGray.rgb),
@@ -177,7 +177,7 @@ fun LoginScreen() {
                     .fontFamily(FONT_FAMILY),
                 text = errorText
             )
-        }*/
+        }*//*
     }
 }
 
@@ -189,5 +189,6 @@ private fun rememberLoggedIn(
     if (user != null) {
         localStorage["userId"] = user._id
         localStorage["username"] = user.username
-    }
+    }*/
+    return
 }

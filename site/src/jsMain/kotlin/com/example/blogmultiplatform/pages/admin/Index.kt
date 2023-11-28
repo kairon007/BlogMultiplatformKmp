@@ -60,9 +60,10 @@ import org.jetbrains.compose.web.css.vh
 @Page
 @Composable
 fun HomePage() {
-    isUserLoggedIn {
+    /*isUserLoggedIn {
         HomeScreen()
-    }
+    }*/
+    HomeScreen()
 }
 
 @Composable
