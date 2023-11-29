@@ -61,6 +61,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun readMyPosts(skip: Int, author: String): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(Filters.eq(PostWithoutDetails::author.name, author))
@@ -68,9 +69,11 @@ private val client = MongoClient.create()
             .skip(skip)
             .limit(POSTS_PER_PAGE)
             .toList()
+
     }
 
     override suspend fun readMainPosts(): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(Filters.eq(PostWithoutDetails::main.name, true))
@@ -80,6 +83,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun readLatestPosts(skip: Int): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(
@@ -96,6 +100,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun readSponsoredPosts(): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(Filters.eq(PostWithoutDetails::sponsored.name, true))
@@ -105,6 +110,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun readPopularPosts(skip: Int): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(Filters.eq(PostWithoutDetails::popular.name, true))
@@ -115,12 +121,14 @@ private val client = MongoClient.create()
     }
 
     override suspend fun deleteSelectedPosts(ids: List<String>): Boolean {
+        return false
         return postCollection
             .deleteMany(Filters.`in`(Post::_id.name, ids))
             .wasAcknowledged()
     }
 
     override suspend fun searchPostsByTittle(query: String, skip: Int): List<PostWithoutDetails> {
+        return emptyList()
         val regexQuery = query.toRegex(RegexOption.IGNORE_CASE)
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
@@ -135,6 +143,7 @@ private val client = MongoClient.create()
         category: Category,
         skip: Int
     ): List<PostWithoutDetails> {
+        return emptyList()
         return postCollection
             .withDocumentClass(PostWithoutDetails::class.java)
             .find(Filters.eq(PostWithoutDetails::category.name, category))
@@ -145,10 +154,22 @@ private val client = MongoClient.create()
     }
 
     override suspend fun readSelectedPost(id: String): Post {
+        return Post(
+            _id = "",
+            title = "",
+            subtitle = "",
+            thumbnail = "",
+            content = "",
+            category = Category.Technology,
+            popular = false,
+            main = true,
+            sponsored = true
+        )
         return postCollection.find(Filters.eq(Post::_id.name, id)).toList().first()
     }
 
     override suspend fun checkUserExistence(user: User): User? {
+        return null
         return try {
             userCollection
                 .find(
@@ -164,6 +185,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun checkUserId(id: String): Boolean {
+        return false
         return try {
             val documentCount = userCollection.countDocuments(Filters.eq(User::_id.name, id))
             documentCount > 0
@@ -174,6 +196,7 @@ private val client = MongoClient.create()
     }
 
     override suspend fun subscribe(newsletter: Newsletter): String {
+        return ""
         val result = newsletterCollection
             .find(Filters.eq(Newsletter::email.name, newsletter.email))
             .toList()

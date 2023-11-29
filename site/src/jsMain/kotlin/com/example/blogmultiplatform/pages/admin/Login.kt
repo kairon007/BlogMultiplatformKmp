@@ -82,7 +82,7 @@ fun LoginScreen() {
                     .margin(bottom = 50.px)
                     .width(100.px),
                 src = Res.Image.logo,
-                desc = "Logo Image"
+                alt = "Logo Image"
             )
             Input(
                 type = InputType.Text,
@@ -190,4 +190,5 @@ private fun rememberLoggedIn(
         localStorage["userId"] = user._id
         localStorage["username"] = user.username
     }
+    return
 }
