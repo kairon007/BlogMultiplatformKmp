@@ -1,7 +1,7 @@
 [versions]
-jetbrains-compose = "1.5.3"
-kobweb = "0.14.1"
-kotlin = "1.9.10"
+jetbrains-compose = "1.5.11"
+kobweb = "0.15.3-SNAPSHOT"
+kotlin = "1.9.21"
 #kmongo = "4.9.0"
 serialization = "1.5.1"
 agp = "8.1.2"
@@ -14,6 +14,7 @@ coroutines = "1.7.1"
 mongodb = "1.7.1"
 mongodb-kotlin = "4.10.1"
 coil = "2.3.0"
+storage = "1.36.0"
 
 [libraries]
 kobweb-api = { module = "com.varabyte.kobweb:kobweb-api", version.ref = "kobweb" }
@@ -22,6 +23,7 @@ kobweb-silk-core = { module = "com.varabyte.kobweb:kobweb-silk", version.ref = "
 kobweb-silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "kobweb" }
 kobweb-silk-icons-mdi = { module = "com.varabyte.kobweb:kobweb-silk-icons-mdi", version.ref = "kobweb" }
 kobwebx-markdown = { module = "com.varabyte.kobwebx:kobwebx-markdown", version.ref = "kobweb" }
+googlecloud-storage = { module = "com.google.cloud:google-cloud-storage", version.ref = "storage" }
 #kmongo-database = { module = "org.litote.kmongo:kmongo-coroutine-serialization", version.ref = "kmongo" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }

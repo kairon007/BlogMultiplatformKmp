@@ -15,6 +15,9 @@ version = "1.0-SNAPSHOT"
 
 kobweb {
     app {
+        export {
+            filter.set { !route.startsWith("/admin/") }
+        }
         index {
             description.set("Powered by Kobweb")
 
@@ -47,6 +50,7 @@ kotlin {
             dependencies {
                 implementation(compose.runtime)
                 implementation(libs.kotlinx.serialization)
+                implementation(libs.googlecloud.storage)
                 implementation(project(":shared"))
             }
         }
@@ -58,6 +62,7 @@ kotlin {
                 implementation(libs.kobweb.silk.core)
                 implementation(libs.kobweb.silk.icons.fa)
                 implementation(libs.kotlinx.serialization)
+                implementation(libs.googlecloud.storage)
                 // implementation(libs.kobwebx.markdown)
             }
         }
@@ -66,6 +71,7 @@ kotlin {
                 implementation(libs.kobweb.api)
                 implementation(libs.mongodb.kotlin.driver)
                 implementation(libs.kotlinx.serialization)
+                implementation(libs.googlecloud.storage)
             }
         }
     }
