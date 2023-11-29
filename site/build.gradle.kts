@@ -15,9 +15,7 @@ version = "1.0-SNAPSHOT"
 
 kobweb {
     app {
-        export {
-            filter.set { false }
-        }
+
         index {
             description.set("Powered by Kobweb")
 
