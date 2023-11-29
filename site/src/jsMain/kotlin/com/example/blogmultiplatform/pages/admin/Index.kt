@@ -67,7 +67,7 @@ fun HomePage() {
 
 @Composable
 fun HomeScreen() {
-/*    var randomJoke: RandomJoke? by remember { mutableStateOf(null) }
+    var randomJoke: RandomJoke? by remember { mutableStateOf(null) }
 
     LaunchedEffect(Unit) {
         fetchRandomJoke { randomJoke = it }
@@ -76,13 +76,13 @@ fun HomeScreen() {
     AdminPageLayout {
         HomeContent(randomJoke = randomJoke)
         AddButton()
-    }*/
+    }
     return
 }
 
 @Composable
 fun HomeContent(randomJoke: RandomJoke?) {
-  /*  val breakpoint = rememberBreakpoint()
+   val breakpoint = rememberBreakpoint()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -103,7 +103,7 @@ fun HomeContent(randomJoke: RandomJoke?) {
                             .size(150.px)
                             .margin(bottom = 50.px),
                         src = Res.Image.laugh,
-                        desc = "Laugh Image"
+                        alt = "Laugh Image"
                     )
                 }
                 if (randomJoke.joke.contains("Q:")) {
@@ -145,8 +145,8 @@ fun HomeContent(randomJoke: RandomJoke?) {
         } else {
             LoadingIndicator()
         }
-    }*/
-    return
+    }
+
 }
 
 @Composable

@@ -23,6 +23,8 @@ import org.w3c.dom.get
 import org.w3c.dom.set
 import kotlin.js.Date
 
+
+
 suspend fun checkUserExistence(user: User): UserWithoutPassword? {
     return try {
         window.api.tryPost(

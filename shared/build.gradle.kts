@@ -12,14 +12,20 @@ kotlin {
     @Suppress("UNUSED_VARIABLE") // Suppress spurious warnings about sourceset variables not being used
     sourceSets {
         val commonMain by getting {
-            dependencies {}
+            dependencies {
+                implementation(libs.googlecloud.storage)
+            }
         }
 
         val jsMain by getting {
-            dependencies {}
+            dependencies {
+                implementation(libs.googlecloud.storage)
+            }
         }
         val jvmMain by getting {
-            dependencies { }
+            dependencies {
+                implementation(libs.googlecloud.storage)
+            }
         }
     }
 }
